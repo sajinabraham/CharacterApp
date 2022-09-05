@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "918939325055",
+    "project_id": "characterapp-f5417",
+    "storage_bucket": "characterapp-f5417.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:918939325055:android:cc32143cd224e5c37fe54a",
+        "android_client_info": {
+          "package_name": "com.tcl.characterapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "918939325055-5kk0q8p84ujqjnfh4c2mai9l2p0ls4t0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tcl.characterapp",
+            "certificate_hash": "a9f7ef50914a9d352376a39417cddfadb47ed248"
+          }
+        },
+        {
+          "client_id": "918939325055-9ht2f8hng7vahb6rh64aenesq7fktjv9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHawUj8XXIOiIa8beUEXwBumt2Ko92_6I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "918939325055-9ht2f8hng7vahb6rh64aenesq7fktjv9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

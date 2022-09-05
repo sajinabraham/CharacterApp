@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">CharacterApp</string>
+    <string name="character">Character</string>
+    <string name="favorite">Favorite</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="retry">Retry</string>
+    <string name="no_character_found_matching_your_selections">No character found matching your selections</string>
+
+    // Toast Message
+    <string name="toast_message_error">The operation failed, try again later</string>
+    <string name="toast_message_success_added">Successfully added to your Favorite List</string>
+    <string name="toast_message_success">Successfully completed</string>
+    <string name="toast_message_success_remove">Successfully removed to your from Favorite List</string>
+    <string name="list_type">List Type</string>
+    <string name="swipe_delete">Delete</string>
+
+    // Dialog
+    <string name="dialog_question_add_character_favorite">Are you sure to want to add character of the %s in the your favorites?</string>
+    <string name="dialog_question_remove_character_favorite">Are you sure to want to remove character of the %s in the your favorites?</string>
+    <string name="dialog_header_add_favorite">Add Favorite List</string>
+    <string name="dialog_header_remove_favorite">Remove Favorite List</string>
+    <string name="web_client_id">367733722835-dqr4qjjo5qb73cdp3c9iass4rnlvvc30.apps.googleusercontent.com</string>
+</resources>
