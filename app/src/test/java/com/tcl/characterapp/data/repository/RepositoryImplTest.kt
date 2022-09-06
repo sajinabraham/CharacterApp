@@ -58,8 +58,6 @@ class RepositoryImplTest {
         species = "human"
     )
 
-    val characterList = mutableListOf<CharactersDomain>()
-
     @Before
     fun setup() {
         MockitoAnnotations.openMocks(this)
@@ -70,10 +68,6 @@ class RepositoryImplTest {
     @After
     fun tearDown() {
         Dispatchers.resetMain()
-    }
-
-    @Test
-    fun getAllCharacters() {
     }
 
     @Test
@@ -100,9 +94,5 @@ class RepositoryImplTest {
 
     @Test
     fun deleteCharacterFromMyFavoriteList() {
-    }
-
-    @Test
-    fun getApi() {
     }
 }
