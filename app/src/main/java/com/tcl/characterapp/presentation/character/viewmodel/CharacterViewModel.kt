@@ -19,8 +19,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CharacterViewModel @Inject constructor(
-    private val repository: Repository,
-    private val app: Application
+    private val repository: Repository
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(CharacterActivityState())
@@ -53,9 +52,9 @@ class CharacterViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 repository.insertMyFavoriteList(character)
-                updateToastMessage(app.getString(R.string.toast_message_success))
+                //updateToastMessage(app.getString(R.string.toast_message_success))
             } catch (e: Exception) {
-                updateToastMessage(app.getString(R.string.toast_message_error))
+                //updateToastMessage(app.getString(R.string.toast_message_error))
             }
         }
         updateToastState()
@@ -76,9 +75,9 @@ class CharacterViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 repository.deleteCharacterFromMyFavoriteList(character)
-                updateToastMessage(app.getString(R.string.toast_message_success))
+                //updateToastMessage(app.getString(R.string.toast_message_success))
             } catch (e: Exception) {
-                updateToastMessage(app.getString(R.string.toast_message_error))
+                //updateToastMessage(app.getString(R.string.toast_message_error))
             }
         }
         updateToastState()
