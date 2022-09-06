@@ -9,8 +9,6 @@ import com.tcl.characterapp.data.remote.character.CharacterData
 import com.tcl.characterapp.domain.model.CharactersDomain
 import com.tcl.characterapp.domain.repository.Repository
 import com.tcl.characterapp.paging.CharactersPagingDataSource
-import com.tcl.characterapp.utils.GenderState
-import com.tcl.characterapp.utils.StatusState
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
@@ -21,8 +19,6 @@ class RepositoryImpl @Inject constructor(
 
 
     override suspend fun getAllCharacters(
-        status: StatusState,
-        gender: GenderState,
         name: String
     ): Flow<PagingData<CharacterData>> {
         return Pager(
@@ -30,8 +26,6 @@ class RepositoryImpl @Inject constructor(
             pagingSourceFactory = {
                 CharactersPagingDataSource(
                     api,
-                    statusState = status,
-                    genderState = gender,
                     nameQuery = name
                 )
             }

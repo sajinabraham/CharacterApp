@@ -10,8 +10,6 @@ interface CharacterApi {
 
     @GET("character")
     suspend fun getAllCharacters(
-        @Query("status") status: String="",
-        @Query("gender") gender: String="",
         @Query("name") name: String="",
         @Query("page") page: Int? = null
     ): CharactersDto

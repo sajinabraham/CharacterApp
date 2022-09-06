@@ -5,16 +5,12 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.tcl.characterapp.data.remote.CharacterApi
 import com.tcl.characterapp.data.remote.character.CharacterData
-import com.tcl.characterapp.utils.GenderState
-import com.tcl.characterapp.utils.StatusState
 import javax.inject.Inject
 
 const val STARTING_PAGE_INDEX = 1
 
 class CharactersPagingDataSource @Inject constructor(
     private val characterApi: CharacterApi,
-    private val statusState: StatusState,
-    private val genderState: GenderState,
     private val nameQuery: String
 ) : PagingSource<Int, CharacterData>() {
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, CharacterData> {
@@ -24,8 +20,6 @@ class CharactersPagingDataSource @Inject constructor(
             val response =
                 characterApi.getAllCharacters(
                     page = pageNumber,
-                    status = statusState.title,
-                    gender = genderState.title,
                     name = nameQuery
                 )
 
