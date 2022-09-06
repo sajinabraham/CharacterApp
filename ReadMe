@@ -1,0 +1,37 @@
+/**            <-------------------------CharacterApp------------------------->
+*Libraries
+ Android Jetpack
+ DataBinding - Declaratively bind observable data to UI elements.
+
+ Lifecycle -  Create a UI that automatically responds to lifecycle events.
+
+ Flow and LiveData - Build data objects that notify views when the underlying database changes.
+
+ ViewModel - Store UI-related data that isn't destroyed on app rotations. Easily schedule asynchronous tasks for optimal execution.
+
+ Room -  Access your app's SQLite database with in-app objects and compile-time checks.
+
+ Paging -  Makes it easier for you to load data gradually and gracefully within your app's RecyclerView.
+
+ HTTP
+
+ Retrofit2 - Type-safe HTTP client for Android and Java by Square, Inc.
+
+ OkHttp - An HTTP+HTTP/2 client for Android and Java applications.
+* Lottie - Beautiful animations
+
+coil - Image Loading Library
+
+Firebase auth-  for login and register
+
+MVVM Architecture Patterns - Model - View- ViewModel
+
+Unit Test Cases for Repository and ViewModel
+*
+*
+*
+*
+*
+*
+*
+**/
