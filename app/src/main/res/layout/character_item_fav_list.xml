@@ -41,12 +41,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="@{characterModel.status}"
             android:visibility="gone"
             android:textAppearance="@style/TextAppearance.body2"
             app:layout_constraintStart_toEndOf="@+id/circleImageView"
-            app:layout_constraintTop_toTopOf="@+id/circleImageView"
-            app:statusColor="@{characterModel.status}" />
+            app:layout_constraintTop_toTopOf="@+id/circleImageView" />
 
         <TextView
             android:id="@+id/characterName"
@@ -66,7 +64,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@{characterModel.gender}"
             android:textAppearance="@style/TextAppearance.caption"
             app:layout_constraintStart_toStartOf="@+id/characterName"
             app:layout_constraintTop_toBottomOf="@+id/characterName"
@@ -77,7 +74,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:text="@{characterModel.species}"
             android:textAppearance="@style/TextAppearance.caption"
             app:layout_constraintBottom_toBottomOf="@+id/characterGender"
             app:layout_constraintStart_toEndOf="@+id/characterGender"

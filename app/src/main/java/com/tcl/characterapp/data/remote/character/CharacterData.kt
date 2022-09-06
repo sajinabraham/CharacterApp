@@ -11,12 +11,8 @@ data class CharacterData(
     val name: String,
     val status: String,
     val species: String,
-    val type: String,
-    val gender: String,
-    val origin: Origin,
     val image: String,
     val url: String,
-    val created: String
 )
 
 
@@ -29,7 +25,6 @@ fun Flow<PagingData<CharacterData>>.toCharactersDomain(list: List<CharactersDoma
                 id = characterData.id,
                 name = characterData.name,
                 status = characterData.status,
-                gender = characterData.gender,
                 image = characterData.image,
                 species = characterData.species,
                 isFavorite = list.contains(characterData.toCharactersDomain())
@@ -46,7 +41,6 @@ fun CharacterData.toCharactersDomain(): CharactersDomain {
         id = id,
         name = name,
         status = status,
-        gender = gender,
         image = image,
         species = species
     )

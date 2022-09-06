@@ -170,8 +170,7 @@
                         android:textAllCaps="true"
                         android:textAppearance="@style/TextAppearance.subtitle1"
                         android:textColor="#8E8E93"
-                        app:layout_constraintTop_toBottomOf="@id/characterName"
-                        tools:text="Human" />
+                        app:layout_constraintTop_toBottomOf="@id/characterName" />
 
                 </LinearLayout>
 

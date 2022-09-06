@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/layout/character_item_fav_list.xml" value="0.21510416666666668" />
         <entry key="app/src/main/res/layout/character_item_list.xml" value="0.21510416666666668" />
         <entry key="app/src/main/res/layout/fragment_character.xml" value="0.21510416666666668" />
+        <entry key="app/src/main/res/layout/fragment_character_detail.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_favorite.xml" value="0.21510416666666668" />
       </map>
     </option>
