@@ -1,8 +1,9 @@
 package com.tcl.characterapp.presentation.character.view
 
 import android.app.AlertDialog
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -25,6 +27,7 @@ import com.tcl.characterapp.utils.Util
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+
 
 @AndroidEntryPoint
 class CharacterFragment : Fragment() {
@@ -52,7 +55,14 @@ class CharacterFragment : Fragment() {
         prepareCharacterAdapter()
 
         getListData()
-
+        binding.logoutIB.setOnClickListener {
+            val preferences: SharedPreferences? =
+                activity?.getSharedPreferences("getSharedPref", Context.MODE_PRIVATE)
+            val editor = preferences!!.edit()
+            editor.clear()
+            editor.apply()
+            findNavController().navigate(R.id.loginFragment)
+        }
         binding.refreshBtn.setOnClickListener {
             characterAdapter.retry()
         }
