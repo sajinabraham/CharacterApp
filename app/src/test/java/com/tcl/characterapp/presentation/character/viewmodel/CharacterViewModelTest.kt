@@ -1,6 +1,7 @@
 package com.tcl.characterapp.presentation.character.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import androidx.lifecycle.asLiveData
 import androidx.paging.PagingData
 import com.tcl.characterapp.data.remote.character.toCharactersDomain
 import com.tcl.characterapp.data.repository.FakeRepository
@@ -91,10 +92,17 @@ class CharacterViewModelTest {
     fun getAllFavoriteCharacters() = runBlocking{
         repository.characterList.add(charactersData)
         characterViewModel.getAllFavoriteCharacters()
-        characterViewModel
+        characterViewModel.state.asLiveData().observeForever {
+            assertEquals(repository.characterList, it)
+        }
     }
 
     @Test
     fun deleteCharacterFromMyFavoriteList() {
+        repository.characterList.add(charactersData)
+        characterViewModel.deleteCharacterFromMyFavoriteList(charactersData)
+        characterViewModel.state.asLiveData().observeForever {
+            assertEquals(repository.characterList, it)
+        }
     }
 }
