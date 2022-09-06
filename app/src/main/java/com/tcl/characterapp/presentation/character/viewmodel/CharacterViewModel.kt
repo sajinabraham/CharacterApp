@@ -3,6 +3,7 @@ package com.tcl.characterapp.presentation.character.viewmodel
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import com.tcl.characterapp.R
@@ -29,6 +30,7 @@ class CharacterViewModel @Inject constructor(
         getAllFavoriteCharacters()
 
         viewModelScope.launch {
+            state.asLiveData()
 
             getListData().collect { it ->
                 _state.value = _state.value.copy(
