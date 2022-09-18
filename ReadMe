@@ -13,6 +13,8 @@
 
  Paging -  Makes it easier for you to load data gradually and gracefully within your app's RecyclerView.
 
+ API - https://rickandmortyapi.com/api/character
+
  HTTP
 
  Retrofit2 - Type-safe HTTP client for Android and Java by Square, Inc.
@@ -27,6 +29,9 @@ Firebase auth-  for login and register
 MVVM Architecture Patterns - Model - View- ViewModel
 
 Unit Test Cases for Repository and ViewModel
+
+For Login : Credential - Username: sajinabraham@gmail.com, Password: aeiou987
+Or Create a New User (every User Saved in the firebase database)
 *
 *
 *
