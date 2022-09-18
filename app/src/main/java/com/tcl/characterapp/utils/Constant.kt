@@ -13,8 +13,5 @@ object Constant {
     const val INSERT_USER_FAVORITES = " user added to favourites."
     const val BLANK_FIELD_ERROR = "This field cannot be left blank."
 
-
     const val CHECK_YOUR_CONNCETION = "No Internet."
-
-    const val RC_SIGN_IN = 1001
 }

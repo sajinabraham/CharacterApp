@@ -1,36 +1,26 @@
 package com.tcl.characterapp.presentation.login
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.common.api.ApiException
 import com.google.android.material.snackbar.Snackbar
 import com.tcl.characterapp.R
 import com.tcl.characterapp.databinding.FragmentLoginBinding
 import com.tcl.characterapp.domain.model.AuthModel
 import com.tcl.characterapp.utils.NetworkListener
-import com.tcl.characterapp.utils.Resource
 import comprmto.rickyandmorty.util.Constant
 import comprmto.rickyandmorty.util.Constant.BLANK_FIELD_ERROR
 import comprmto.rickyandmorty.util.Constant.CHECK_YOUR_CONNCETION
 import comprmto.rickyandmorty.util.Constant.FAILED_LOGIN
-import comprmto.rickyandmorty.util.Constant.RC_SIGN_IN
 import comprmto.rickyandmorty.util.Constant.SUCCESS_LOGIN
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
