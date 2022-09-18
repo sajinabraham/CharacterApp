@@ -87,12 +87,4 @@ class RepositoryImplTest {
         val result = repositoryImpl.getAllFavoriteCharacters()
         assertEquals(data, result)
     }
-
-    @Test
-    fun insertMyFavoriteList() = runBlocking {
-    }
-
-    @Test
-    fun deleteCharacterFromMyFavoriteList() {
-    }
 }

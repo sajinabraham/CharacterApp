@@ -28,7 +28,7 @@ import org.mockito.kotlin.whenever
 import retrofit2.Response
 
 @ExperimentalCoroutinesApi
-@RunWith(MockitoJUnitRunner::class)
+@RunWith(MockitoJUnitRunner.Silent::class)
 class CharacterViewModelTest {
 
     val dispatcher = StandardTestDispatcher()
@@ -58,34 +58,6 @@ class CharacterViewModelTest {
     @After
     fun tearDown() {
         Dispatchers.resetMain()
-    }
-
-    @Test
-    fun getState() {
-    }
-
-//    @Test
-//    fun `get List Data`() = runBlocking {
-//        whenever(
-//            repository.getAllCharacters().toCharactersDomain(
-//                listOf(
-//                    CharactersDomain(
-//                        id = 1,
-//                        name = "sajin",
-//                        status = "alive",
-//                        image = "",
-//                        species = "human"
-//                    )
-//                )
-//            )
-//        ).thenReturn(Flow<PagingData<CharactersDomain>>)
-//        characterViewModel.getListData()
-//
-//        assertEquals(CharactersDomain(1,"","","",""), repository.getAllCharacters())
-//    }
-
-    @Test
-    fun insertMyFavoriteList() {
     }
 
     @Test

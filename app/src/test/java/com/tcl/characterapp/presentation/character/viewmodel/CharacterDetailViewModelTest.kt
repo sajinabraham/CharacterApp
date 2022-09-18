@@ -23,7 +23,7 @@ import org.mockito.junit.MockitoJUnitRunner
 import org.mockito.kotlin.whenever
 
 @ExperimentalCoroutinesApi
-@RunWith(MockitoJUnitRunner::class)
+@RunWith(MockitoJUnitRunner.Silent::class)
 class CharacterDetailViewModelTest {
 
     val dispatcher = StandardTestDispatcher()
