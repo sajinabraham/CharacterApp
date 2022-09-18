@@ -1,12 +1,9 @@
 package com.tcl.characterapp.presentation.login
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.firebase.auth.FirebaseAuth
-import com.tcl.characterapp.data.repository.Repo
 import com.tcl.characterapp.domain.model.AuthModel
 import com.tcl.characterapp.domain.model.User
 import com.tcl.characterapp.domain.usecase.firebase.GetCurrentUserUseCase
@@ -24,13 +21,10 @@ import javax.inject.Inject
 class LoginViewModel @Inject constructor(
     private val loginUseCase: LoginUseCase,
     private val getCurrentUserUseCase: GetCurrentUserUseCase,
-    private val repo: Repo,
-    private val firebaseAuth: FirebaseAuth
 ) : ViewModel() {
 
     private val uiState = MutableStateFlow(LoginUiState())
     val _uiState: StateFlow<LoginUiState> = uiState.asStateFlow()
-    private val gMailUserLiveData = MutableLiveData<Resource<User>>()
 
     fun handleEvent(uiEvent: LoginUiEvent) {
         when (uiEvent) {
@@ -55,6 +49,7 @@ class LoginViewModel @Inject constructor(
                     is Resource.Error -> {
 
                     }
+                    else -> {}
                 }
             }
         }
@@ -73,24 +68,9 @@ class LoginViewModel @Inject constructor(
                     is Resource.Error -> {
 
                     }
+                    else -> {}
                 }
             }
         }
-    }
-
-     fun signInWithGoogle(acct: GoogleSignInAccount): LiveData<Resource<User>> {
-        repo.signInWithGoogle(acct).addOnCompleteListener { task ->
-            if (task.isSuccessful) {
-                gMailUserLiveData.postValue(
-                    Resource.Success(
-                        User(firebaseAuth.currentUser?.email!!, firebaseAuth.currentUser?.displayName!!)
-                    )
-                )
-            } else {
-                gMailUserLiveData.postValue(Resource.Error("couldn't sign in user"))
-            }
-
-        }
-        return gMailUserLiveData
     }
 }

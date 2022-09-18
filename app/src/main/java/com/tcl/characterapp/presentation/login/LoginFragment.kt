@@ -38,9 +38,6 @@ class LoginFragment : Fragment() {
     private val loginViewModel: LoginViewModel by viewModels()
     private var loginBinding: FragmentLoginBinding? = null
 
-    @Inject
-    lateinit var googleSignInClient: GoogleSignInClient
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -71,10 +68,6 @@ class LoginFragment : Fragment() {
     private fun initListeners() {
 
         loginBinding?.apply {
-
-            googleSignIn.setOnClickListener {
-                signIn()
-            }
             loginBtn.setOnClickListener {
                 val userEmail = emailEt.text.toString().trim()
                 val userPassword = PassEt.text.toString().trim()
@@ -121,35 +114,6 @@ class LoginFragment : Fragment() {
                 findNavController().navigate(R.id.action_loginFragment_to_RegisterFragment)
             }
         }
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == RC_SIGN_IN) {
-
-            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-            try {
-                val account = task.getResult(ApiException::class.java)
-
-                loginViewModel.signInWithGoogle(account!!).observe(viewLifecycleOwner) {
-                    when (it) {
-                        is Resource.Success -> {
-
-                            Log.e("email", "email" + it.data?.email)
-                        }
-                    }
-                }
-            } catch (e: ApiException) {
-                Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-    private fun signIn() {
-
-        val signInIntent: Intent = googleSignInClient.signInIntent
-
-        startActivityForResult(signInIntent, RC_SIGN_IN)
-
     }
 
     override fun onDestroy() {
